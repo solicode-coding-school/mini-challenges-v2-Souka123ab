@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #FFF0D1;
+}
+.container{
+    background: #795757;
+    width: 450px;
+    height: 450px;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+.game{
+color:white ;
+font-size: 22px;
+font-weight: 500;
+padding: 20px 27px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.play{
+  width: 100%;  
+  height: 100%;
+  display: grid;
+  grid-template: repeat(30,1fr)/repeat(30,1fr);
+  background: #664343;
+}
+.play .snake{
+   background:#45fc03 ; 
+   width: 12px;
+}
+.play .mange{
+    background:#cb3208 ;   
+    width: 12px;
+}
