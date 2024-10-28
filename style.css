@@ -13,8 +13,8 @@ body{
 }
 .container{
     background: #795757;
-    width: 450px;
-    height: 450px;
+    width: 550px;
+    height: 550px;
     border-radius: 8px;
     display: flex;
     overflow: hidden;
@@ -44,4 +44,17 @@ align-items: center;
 .play .mange{
     background:#cb3208 ;   
     width: 12px;
+}
+.controler i{
+    padding: 25px 0;
+    width: calc(100%/4);
+    text-align: center;
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 22px;
+    border-right: 1px solid #664343;
+}
+.controler{
+    display: flex;
+    justify-content: space-between;
 }
