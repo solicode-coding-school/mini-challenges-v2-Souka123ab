@@ -23,15 +23,15 @@ controler.forEach(function (key) {
 
   })
 })
+
 console.log(hight)
-console.log(hightScore)
 // game over
 function gameOver() {
   clearInterval(playsnake)
   location.reload()
   alert('game oveer')
 }
-scoreHight.innerText = `Scor-hight : ${scoreHight}`
+// scoreHight.innerText = `y(sjuj) : ${scoreHight}`
 function change() {
   mangeX = Math.floor(Math.random() * 30) + 1;
   mangeY = Math.floor(Math.random() * 30) + 1;
@@ -71,8 +71,10 @@ const play = function () {
     localStorage.setItem("hight-score", scoreHight)
 
 
-    hightScore.innerText = `Scor-hight : ${scoreHight}`
-    scoreHight.innerText = `Score : ${score}`
+    hightScore.innerText = `Score : ${score}`
+    hight.innerText = `max score : ${scoreHight}`
+    console.log(scoreHight)
+
   }
   for (let i = snake.length - 1; i > 0; i--) {
     snake[i] = snake[i - 1]
@@ -105,7 +107,7 @@ const play = function () {
 
 change();
 //bax harknaha
-playsnake = setInterval(play, 500)
+playsnake = setInterval(play, 100)
 document.addEventListener("keydown", changePlay)
 
 
