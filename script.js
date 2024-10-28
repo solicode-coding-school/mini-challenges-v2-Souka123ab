@@ -9,9 +9,9 @@ let playsnake;
 // stoker les valeur
 let snake = [];
 // stoker les valeur dans localstorge
-const hightScore = document.querySelector(".score")
+const scoreIni = document.querySelector(".score")
 let score = 0
-let scoreHight = localStorage.getItem('hight-score') || 0
+let localstorageScore = localStorage.getItem('hight-score') || 0
 let hight = document.querySelector('.hight-score')
 const controler = document.querySelectorAll(".controler i")
 controler.forEach(function (key) {
@@ -23,15 +23,16 @@ controler.forEach(function (key) {
 
   })
 })
-
 console.log(hight)
+// console.log(hi)
 // game over
 function gameOver() {
   clearInterval(playsnake)
   location.reload()
   alert('game oveer')
 }
-// scoreHight.innerText = `y(sjuj) : ${scoreHight}`
+// localstorageScore.innerText = `y(sjuj) : ${localstorageScore}`
+    hight.innerText = `max score : ${localstorageScore}`
 function change() {
   mangeX = Math.floor(Math.random() * 30) + 1;
   mangeY = Math.floor(Math.random() * 30) + 1;
@@ -67,13 +68,13 @@ const play = function () {
     // nhsbo score +   
     score++
     snake.push([mangeX, mangeY])
-    scoreHight = score >= scoreHight ? score : scoreHight;
-    localStorage.setItem("hight-score", scoreHight)
+    localstorageScore = score >= localstorageScore ? score : localstorageScore;
+    localStorage.setItem("hight-score", localstorageScore)
 
 
-    hightScore.innerText = `Score : ${score}`
-    hight.innerText = `max score : ${scoreHight}`
-    console.log(scoreHight)
+    scoreIni.innerText = `Score : ${score}`
+    hight.innerText = `max score : ${localstorageScore}`
+    console.log(localstorageScore)
 
   }
   for (let i = snake.length - 1; i > 0; i--) {
@@ -107,7 +108,7 @@ const play = function () {
 
 change();
 //bax harknaha
-playsnake = setInterval(play, 100)
+playsnake = setInterval(play, 300)
 document.addEventListener("keydown", changePlay)
 
 
